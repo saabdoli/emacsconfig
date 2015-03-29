@@ -1,11 +1,14 @@
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
 (require 'package)
-(push '("marmalade" . "http://marmalade-repo.org/packages/") package-archives)
-(push '("melpa" . "http://,elpa.milkbox.net/packages/") package-archives)
 (package-initialize)
 (require 'evil)
 (evil-mode 1)
 (load-theme 'solarized-dark t)
-
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
