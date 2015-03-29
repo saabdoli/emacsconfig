@@ -1,14 +1,42 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+			 ("org" . "http://orgmode.org/elpa")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
+
+
 (require 'package)
 (package-initialize)
 (require 'evil)
+(require 'evil-escape)
+(require 'evil-leader)
 (evil-mode 1)
-(load-theme 'solarized-dark t)
+;;TODO figure out how to initialize with evil escape as default
+(global-evil-leader-mode)
+(setq-default evil-escape-key-sequence "jk")
+(evil-leader/set-leader "<SPC>")
+(load-theme 'firebelly t)
+
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
+;;set leader key
+;;set <leader> shortcuts
+(evil-leader/set-key
+"e" 'find-file
+"ff" 'find-file
+"b" 'switch-to-buffer
+"k" 'kill-buffer
+"zz" 'save-buffers-kill-emacs
+"ww" 'other-window
+"wc" 'delete-window
+"wo" 'delete-other-window
+"s" 'save-buffer
+"wn" 'write-named-file
+"nf" 'make-frame-command
+"wh" 'split-window-below
+"wv" 'split-window-right
+)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

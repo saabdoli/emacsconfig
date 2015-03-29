@@ -1,3 +1,3 @@
 This is my emacs config folder.
 
-This is a vanilla version of Emacs 24 with Evil at default settings.
+This configuration include Evil Mode, with Evil Escape Mode, and Evil-Leader.
