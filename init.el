@@ -9,6 +9,8 @@
 (require 'evil-leader)
 (require 'helm)
 (require 'evil-org)
+(require 'auto-complete)
+(ac-config-default)
 (helm-mode 1)
 
 (setq helm-split-window-in-side-p t)
@@ -42,26 +44,34 @@
 (evil-leader/set-leader "<SPC>")
 ;;set <leader> shortcuts
 (evil-leader/set-key
-"e" 'find-file
+
 "ff" 'find-file               ;;find with ido
+"fs" 'save-buffer
+"fl" 'load-file
+
 "bb" 'switch-to-buffer
-"bn" 'next-buffer
-"bp" 'previous-buffer
-"k" 'kill-buffer
+"bj" 'next-buffer
+"bk" 'previous-buffer
+"bl" 'list-buffers
+"bk" 'kill-buffer
+
 "zz" 'save-buffers-kill-emacs
+
 "ww" 'other-window
 "wc" 'delete-window
 "wo" 'delete-other-windows
-"s" 'save-buffer
-"fn" 'write-named-file
+
 "nf" 'make-frame-command
 "wh" 'split-window-below
 "wv" 'split-window-right
+
 "as" 'ansi-term
-"lf" 'load-file
 "lp" 'package-list-packages
 "os" 'sa/open-ansi-term
 "ms" 'magit-status
+
+"cf" 'compile
+"cc" 'recompile
 )
 ;; Leader 
 ;; Section for my defined function ------------------------
